@@ -2,7 +2,7 @@
 
 点击如下按钮将跳转到云开发进行部署，可参考文档继续进行二次开发。
 
-[![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https%3A%2F%2Fgithub.com%2FWilsonLiu95%2FDiscuz-Q&branch=main)
+[![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https%3A%2F%2Fgithub.com%2FWilsonLiu95%2FDiscuz-Q&branch=master)
 
 ## 介绍
 
