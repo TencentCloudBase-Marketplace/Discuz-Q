@@ -1,0 +1,59 @@
+#!/bin/bash -e
+
+#git repo
+#主程序
+DZQ_MAIN="./source/dzq_latest_install" #示例值
+#H5编译后的文件库
+DZQ_H5="./source/uniapp_v2.1.201126/dist/build/h5" #示例值
+#pc编译后的文件库
+DZQ_PC="./source/discuz_web_v2.1.201126/dist" #示例值
+
+###########################################
+#准备好腾讯云镜像仓库账号（腾讯云账号uin）和密码，并从以下链接获取上传镜像路径
+#https://console.cloud.tencent.com/tcb/service/detail?envId=dzqtcb001-4gi7e7vbb9d38f09&rid=4&tab=image&name=discuzq
+USERNAME="100013452092" #示例值
+#从上面的url查看腾讯云账号的镜像
+IMAGE_NAME="tcb-100013452092-ylqd/test-176ab2_discuzq" #示例值
+#镜像版本号
+if [ "$#" -lt 1 ]; then
+    echo "请输入当前版本号 如 ./run v1.0.1"
+    exit
+fi
+VERSION=${1}
+BASE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DISCUZ_ROOT=root/var/www/discuz/
+TEMP_ROOT=root/var/www/temp/
+cd $BASE
+rm -rf $DISCUZ_ROOT*
+mkdir -p $DISCUZ_ROOT
+rm -rf $TEMP_ROOT
+mkdir -p $TEMP_ROOT
+
+#clone all projects
+echo "-------------------复制仓库源码--------------------"
+cp -r $DZQ_MAIN $TEMP_ROOT/dzq_main
+cp -r $DZQ_H5 $TEMP_ROOT/dzq_h5
+cp -r $DZQ_PC $TEMP_ROOT/dzq_pc
+
+#merge discuz
+echo "-------------------准备生成Discuz!Q--------------------"
+cp -r $TEMP_ROOT/dzq_main/* $DISCUZ_ROOT
+cp -r $TEMP_ROOT/dzq_h5/* $DISCUZ_ROOT/public
+cp -r $TEMP_ROOT/dzq_pc/* $DISCUZ_ROOT/public
+rm -rf $TEMP_ROOT
+
+#download setup.php
+curl https://discuzq-docs-1258344699.cos.ap-guangzhou.myqcloud.com/setup.php -o root/usr/sbin/setup.php
+
+#make image
+echo "-------------------生成本地镜像 $VERSION--------------------"
+
+docker build -t $IMAGE_NAME:$VERSION .
+
+#push docker image
+echo "-------------------上传镜像到云托管镜像仓库--------------------"
+
+sudo docker login --username=$USERNAME ccr.ccs.tencentyun.com
+sudo docker push $IMAGE_NAME:$VERSION
+
+echo "镜像上传完成。"

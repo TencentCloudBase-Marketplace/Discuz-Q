@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  dq-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./source/dzq_latest_install:/var/www/discuz
+    env_file: 
+      - .env
+    links:
+      - mysql
+    depends_on:
+      - mysql
+    ports:
+      - "80:80"
+  mysql:
+    image: 'mysql:5.7'
+    env_file: 
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MysqlPassword}
+      MYSQL_USER: ${MysqlUsername}
+    restart: always
+    volumes:
+      - ./storage/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"

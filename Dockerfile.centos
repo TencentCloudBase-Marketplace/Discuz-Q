@@ -1,0 +1,24 @@
+FROM centos:7
+
+LABEL Maintainer="oldhu <me@oldhu.com>" \
+      Description="Discuz! Q container with Nginx & PHP-FPM based on CentOS 7."
+
+ARG TZ=Asia/Shanghai
+
+RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
+    yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
+    yum -y install yum-utils && yum-config-manager --enable remi-php74 && \
+    yum update -y &&  \
+    yum install -y tzdata && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
+    yum install -y php-cli php-fpm nginx cronie openssl php-mysql php-gd php-bcmath php-mbstring php-xml php-curl php-exif curl && \
+    yum clean all && \
+    rm -rf /var/cache/yum
+
+COPY root /
+
+RUN chown -R apache:apache /var/www/discuz
+RUN curl https://discuzq-docs-1258344699.cos.ap-guangzhou.myqcloud.com/setup.php -o /usr/sbin/setup.php
+
+EXPOSE 80
+
+CMD ["/usr/sbin/supervisord", "-c", "/etc/supervisord.conf"]

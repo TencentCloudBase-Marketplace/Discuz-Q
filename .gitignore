@@ -1,0 +1,5 @@
+storage
+root/usr/sbin/setup.php
+# 存放源代码，每份源代码建议单独仓库存储
+source
+.env
