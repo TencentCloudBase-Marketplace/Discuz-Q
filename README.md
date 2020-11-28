@@ -1,6 +1,8 @@
-<p align="center"><img src="https://www.discuz.net/static/image/common/logo.svg"></p>
+# Discuz! Q 云开发部署
 
-# Discuz! Q 云开发二次开发指引
+点击如下按钮将跳转到云开发进行部署，可参考文档继续进行二次开发。
+
+[![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https%3A%2F%2Fgithub.com%2FWilsonLiu95%2FDiscuz-Q&branch=main)
 
 ## 介绍
 
@@ -94,8 +96,11 @@ unzip dzq_latest_install.zip -d dzq_latest_install
 
 登录云开发控制台，在云托管处点击[原版本编辑配置并重新部署](https://docs.cloudbase.net/run/update-service.html#fang-shi-er-yuan-ban-ben-bian-ji-pei-zhi-bing-chong-xin-bu-shu)。
 
-### 方式1
+注：新建版本时，当前不支持配置挂载CFS磁盘，因此，请勿直接在控制台新建版本部署。如果希望新建版本部署，请使用 方式2
+
+### 方式2
 
 安装云开发命令行工具 `npm i -g @cloudbase/cli`。
 
 更新 `cloudbaserc.json` 中的 `imageUrl` 为构建出的最新的镜像地址，并执行 `tcb` 部署到对应的环境中。
+
