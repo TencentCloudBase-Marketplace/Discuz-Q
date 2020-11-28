@@ -33,15 +33,6 @@
             "addons": [{
                 "type": "CFS",
                 "name": "discuz-cfs"
-            }, {
-                "type": "CynosDB",
-                "name": "discuzq",
-                "envMap": {
-                    "IP": "MysqlHost",
-                    "PORT": "MysqlPort",
-                    "USERNAME": "MysqlUsername",
-                    "PASSWORD": "MysqlPassword"
-                }
             }],
             "environment": {
                 "AdminAccount": {
@@ -53,6 +44,24 @@
                     "description": "管理员账号",
                     "required": true,
                     "default": "discuz@1234"
+                },
+                "MysqlHost": {
+                    "description": "mysql地址",
+                    "required": true
+                },
+                "MysqlPort": {
+                    "description": "mysql端口",
+                    "required": true,
+                    "default": "3306"
+                },
+                "MysqlUsername": {
+                    "description": "mysql数据库账号",
+                    "required": true,
+                    "default": "root"
+                },
+                "MysqlPassword": {
+                    "description": "mysql数据库密码",
+                    "required": true
                 }
             }
         }
