@@ -66,6 +66,8 @@ unzip dzq_latest_install.zip -d dzq_latest_install
 
 ### 1、启动服务
 
+请先执行`download.sh`脚本下载最新的代码文件。
+
 1、通过`docker-compose up`。将默认启动后端代码并且挂载本地的源码目录 `source/dzq_latest_install`，并且创建一个本地mysql数据库，方便本地开发。
 2、可在 `source/discuz_web_v2.1.201126` 目录执行 `yarn install && yarn dev` 运行web端服务
 3、可在 `source/uniapp_v2.1.201126` 目录执行 `yarn install && yarn dev:h5` 运行h5端服务
@@ -104,3 +106,8 @@ unzip dzq_latest_install.zip -d dzq_latest_install
 
 更新 `cloudbaserc.json` 中的 `imageUrl` 为构建出的最新的镜像地址，并执行 `tcb` 部署到对应的环境中。
 
+## FAQ
+
+### 1、更新环境变量不生效
+
+环境变量里的内容当前安装时，会进行读取并写入到 `/var/www/discuz/config/config.php` 的配置中。后续更新不继续读取。可以通过 [webshell](https://docs.cloudbase.net/run/webshell.html#cao-zuo-bei-jing) 登录进行修改。默认镜像内只有 nano 编辑器。
