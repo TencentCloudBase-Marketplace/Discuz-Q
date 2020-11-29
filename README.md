@@ -40,6 +40,7 @@
 [构建/发布小程序与H5前端](https://discuz.com/docs/uniapp_hbuilderx.html#%E4%B8%8D%E4%BD%BF%E7%94%A8hbuilder%E6%9E%84%E5%BB%BA)
 
 当前 Discuz! Q 尚未开源，只放出了代码包，可通过该代码包进行二次开发。
+
 1、[pc端最新下载地址](https://dl.discuz.chat/discuz_web_latest.zip)
 2、[小程序与H5前端 最新下载地址](https://dl.discuz.chat/uniapp_latest.zip)
 3、[Discuz! Q代码下载地址](https://dl.discuz.chat/dzq_latest_install.zip)，包括了 后台源代码，与构建好的前端代码，前端代码在 public 目录下。管理后台的源代码位于 `dzq_latest_install/resources/frame` 目录下，运行 `yarn build-admin` 构建编译到 `dzq_latest_install/public/static-admin/` 目录下
