@@ -1,13 +1,14 @@
 # Discuz! Q 云开发部署
 
-点击如下按钮将跳转到云开发进行部署，可参考文档继续进行二次开发。
-
 活动链接：[用云开发部署Discuz! Q 免费试用30天](https://cloud.tencent.com/act/pro/cloudbase-discuzq)
+
 注：通过活动链接部署才可以领取相应资源包与代金券。
 
-持续开发请点击 [![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https%3A%2F%2Fgithub.com%2FTencentCloudBase-Marketplace%2FDiscuz-Q&branch=master)
+持续开发请点击下面的部署按钮
+[![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https%3A%2F%2Fgithub.com%2FTencentCloudBase-Marketplace%2FDiscuz-Q&branch=master)
 
-自定义mysql配置请点击 [![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https%3A%2F%2Fgithub.com%2FTencentCloudBase-Marketplace%2FDiscuz-Q&branch=mysql)
+自定义mysql版本请点击下面的按钮
+[![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https%3A%2F%2Fgithub.com%2FTencentCloudBase-Marketplace%2FDiscuz-Q&branch=mysql)
 
 ## 介绍
 
