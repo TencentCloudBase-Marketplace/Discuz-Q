@@ -36,31 +36,37 @@
             }],
             "environment": {
                 "AdminAccount": {
-                    "description": "管理员账号",
+                    "description": "后台管理系统管理员账号",
                     "required": true,
                     "default": "admin"
                 },
                 "AdminPassword": {
-                    "description": "管理员账号",
+                    "description": "后台管理系统管理员密码",
                     "required": true,
                     "default": "discuz@1234"
                 },
                 "MysqlHost": {
-                    "description": "mysql地址",
-                    "required": true
+                    "description": "MySQL 地址，请确认对应的 MySQL 在同一个 vpc 网络内，例如10.0.0.18",
+                    "required": true,
+                    "validation": {
+                        "rule": {
+                            "type": "RegExp",
+                            "pattern": "((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})(\\.((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})){3}",
+                            "flag": "g"
+                        }
+                    }
                 },
                 "MysqlPort": {
-                    "description": "mysql端口",
+                    "description": "MySQL端口",
                     "required": true,
                     "default": "3306"
                 },
                 "MysqlUsername": {
-                    "description": "mysql数据库账号",
-                    "required": true,
-                    "default": "root"
+                    "description": "MySQL数据库账号",
+                    "required": true
                 },
                 "MysqlPassword": {
-                    "description": "mysql数据库密码",
+                    "description": "MySQL数据库密码",
                     "required": true
                 }
             }
