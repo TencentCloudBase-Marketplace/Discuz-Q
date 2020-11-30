@@ -118,3 +118,23 @@ unzip dzq_latest_install.zip -d dzq_latest_install
 ### 1、更新环境变量不生效
 
 环境变量里的内容当前安装时，会进行读取并写入到 `/var/www/discuz/config/config.php` 的配置中。后续更新不继续读取。可以通过 [webshell](https://docs.cloudbase.net/run/webshell.html#cao-zuo-bei-jing) 登录进行修改。默认镜像内只有 nano 编辑器。
+
+### 2、公众号场景下如何上传校验文件到域名根目录
+
+#### webshell上传
+
+1、把公众号校验文件，上传到静态托管里，拿到对应的地址后
+2、登录webshell [webshell](https://docs.cloudbase.net/run/webshell.html)
+3、cd /var/www/discuz/public
+4、curl https://wilsonsliu-4ecec0-1252395194.tcloudbaseapp.com/xxxx.txt
+
+#### 静态托管校验
+
+1、把公众号校验文件，上传到静态托管里
+2、将自己的域名绑定到静态托管的自定义域名
+3、到公众号处添加域名，完成校验
+4、解绑域名，再绑定到http访问服务的域名处
+
+### 扩展应用处的Discuz! Q如何升级
+
+扩展应用点击 扩展程序配置 的修改按钮，再进行保存。可触发更新服务。
