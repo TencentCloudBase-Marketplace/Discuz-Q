@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ccr.ccs.tencentyun.com/tcb_public/ubuntu:focal
 
 LABEL Maintainer="oldhu <me@oldhu.com>" \
       Description="Discuz! Q container with Nginx & PHP-FPM based on Ubuntu bionic."
