@@ -1,10 +1,9 @@
 # Discuz! Q 云开发部署
+## 声明
+Discuz! Q为免费开源产品，其自身问题不提供售后维护，您可访问 <http://discuz.chat> 提问，或者扫下图二维码，加小助手微信，帮您拉入“站长互助用户群”交流
+![二维码](https://main.qcloudimg.com/raw/8e30aa45c11ae31bc8ab49fc6bd7bfe5.png)
 
-活动链接：[用云开发部署Discuz! Q 免费试用30天](https://cloud.tencent.com/act/pro/cloudbase-discuzq)
-
-注：通过活动链接部署才可以领取相应资源包与代金券。
-
-
+## 一键部署
 本项目基于开源项目 [CloudBase Framework](https://github.com/Tencent/cloudbase-framework) 开发部署，支持一键云端部署
 
 持续开发请点击下面的部署按钮
